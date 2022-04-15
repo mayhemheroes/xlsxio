@@ -111,7 +111,7 @@ EXAMPLES_BIN += example_xlsxio_readw$(BINEXT)
 endif
 
 COMMON_PACKAGE_FILES = README.md LICENSE.txt Changelog.txt
-SOURCE_PACKAGE_FILES = $(COMMON_PACKAGE_FILES) Makefile CMakeLists.txt CMake/ doc/Doxyfile include/*.h lib/*.c lib/*.h src/*.c examples/*.c build/*.cbp
+SOURCE_PACKAGE_FILES = $(COMMON_PACKAGE_FILES) Makefile CMakeLists.txt CMake/ *.in doc/Doxyfile include/*.h lib/*.c lib/*.h src/*.c examples/*.c build/*.cbp
 
 default: all
 
