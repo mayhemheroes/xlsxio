@@ -91,7 +91,6 @@ jobs:
     - uses: actions/checkout@v1
     - name: Build
       run: |
-        ls -l
         PKG_CONFIG_PATH=$PWD/deps/lib/pkgconfig:/usr/local/opt/libarchive/lib/pkgconfig:$PKG_CONFIG_PATH \
          make install \
          PREFIX=$PWD/release \
