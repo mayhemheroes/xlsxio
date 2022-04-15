@@ -90,8 +90,9 @@ jobs:
         brew install zip ninja expat minizip
     - name: Build
       run: |
+        ls -l
         PKG_CONFIG_PATH=$PWD/deps/lib/pkgconfig:/usr/local/opt/libarchive/lib/pkgconfig:$PKG_CONFIG_PATH \
-         make \
+         make install \
          PREFIX=$PWD/release \
          WIDE=1 \
          ${{ matrix.config.makeargs }} \
