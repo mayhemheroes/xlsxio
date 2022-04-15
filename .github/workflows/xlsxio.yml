@@ -91,10 +91,10 @@ jobs:
     - name: Build
       run: |
         PKG_CONFIG_PATH=$PWD/deps/lib/pkgconfig:/usr/local/opt/libarchive/lib/pkgconfig:$PKG_CONFIG_PATH \
-         make install \
+         make \
          PREFIX=$PWD/release \
          WIDE=1 \
-         ${{ matrix.config.makeargs }}
+         ${{ matrix.config.makeargs }} \
          CFLAGS="-O3 -I$PWD/deps/include -I/usr/local/opt/libarchive/include" \
          LDFLAGS="-L$PWD/deps/lib -L/usr/local/opt/libarchive/lib"
     - if: matrix.config.os == 'windows-latest'
