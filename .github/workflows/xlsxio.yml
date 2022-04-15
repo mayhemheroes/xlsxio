@@ -75,6 +75,7 @@ jobs:
           mingw-w64-${{ matrix.config.arch }}-cmake
           mingw-w64-${{ matrix.config.arch }}-expat
           mingw-w64-${{ matrix.config.arch }}-minizip-git
+          mingw-w64-${{ matrix.config.arch }}-libzip
     - if: matrix.config.os == 'ubuntu-latest'
       name: Install build dependencies (Linux)
       run: |
@@ -83,11 +84,12 @@ jobs:
          cmake \
          ninja-build \
          libexpat1-dev \
-         libminizip-dev
+         libminizip-dev \
+         libzip-dev
     - if: matrix.config.os == 'macos-latest'
       name: Install build dependencies (macOS)
       run: |
-        brew install zip ninja expat minizip
+        brew install zip ninja expat minizip libzip
     - uses: actions/checkout@v1
     - name: Build
       run: |
