@@ -89,7 +89,12 @@ jobs:
     - if: matrix.config.os == 'macos-latest'
       name: Install build dependencies (macOS)
       run: |
-        brew install zip ninja expat minizip libzip
+        brew install \
+         zip \
+         ninja \
+         expat \
+         minizip \
+         libzip
     - uses: actions/checkout@v1
     - name: Build
       run: |
