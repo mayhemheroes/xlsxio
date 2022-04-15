@@ -99,18 +99,18 @@ jobs:
          ${{ matrix.config.makeargs }} \
          CFLAGS="-O3 -I$PWD/deps/include -I/usr/local/opt/libarchive/include" \
          LDFLAGS="-L$PWD/deps/lib -L/usr/local/opt/libarchive/lib"
-    - if: matrix.config.os == 'windows-latest'
-      name: Build package
-      run: |
-        PKG_CONFIG_PATH=$PWD/deps/lib/pkgconfig:/usr/local/opt/libarchive/lib/pkgconfig:$PKG_CONFIG_PATH \
-         make binarypackage \
-         STATIC=1 \
-         CFLAGS="-I$PWD/deps/include -I/usr/local/opt/libarchive/include" \
-         LDFLAGS="-L$PWD/deps/lib -L/usr/local/opt/libarchive/lib"
-        mv xlsxio-*.zip xlsxio-${{ matrix.config.arch }}.zip
-    - if: matrix.config.os == 'windows-latest'
-      name: Upload package
-      uses: actions/upload-artifact@v1
-      with:
-        path: ./release
-        name: xlsxio-${{ matrix.config.arch }}.zip
+    #- if: matrix.config.os == 'windows-latest'
+    #  name: Build package
+    #  run: |
+    #    PKG_CONFIG_PATH=$PWD/deps/lib/pkgconfig:/usr/local/opt/libarchive/lib/pkgconfig:$PKG_CONFIG_PATH \
+    #     make binarypackage \
+    #     STATIC=1 \
+    #     CFLAGS="-I$PWD/deps/include -I/usr/local/opt/libarchive/include" \
+    #     LDFLAGS="-L$PWD/deps/lib -L/usr/local/opt/libarchive/lib"
+    #    mv xlsxio-*.zip xlsxio-${{ matrix.config.arch }}.zip
+    #- if: matrix.config.os == 'windows-latest'
+    #  name: Upload package
+    #  uses: actions/upload-artifact@v1
+    #  with:
+    #    path: ./release
+    #    name: xlsxio-${{ matrix.config.arch }}.zip
