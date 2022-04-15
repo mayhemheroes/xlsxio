@@ -20,7 +20,7 @@ jobs:
               arch: x86_64,
               cc: x86_64-w64-mingw32-gcc.exe,
               cxx: x86_64-w64-mingw32-g++.exe,
-              makeargs: ""
+              makeargs: "WIDE=1"
             }
           - {
               name: "Windows 32-bit (gcc)",
@@ -30,7 +30,7 @@ jobs:
               arch: i686,
               cc: i686-w64-mingw32-gcc.exe,
               cxx: i686-w64-mingw32-g++.exe,
-              makeargs: ""
+              makeargs: "WIDE=1"
             }
           - {
               name: "Ubuntu Linux (clang)",
@@ -39,7 +39,7 @@ jobs:
               arch: x86_64,
               cc: clang,
               cxx: clang++,
-              makeargs: ""
+              makeargs: "WIDE=1"
             }
           - {
               name: "macOS (clang)",
@@ -94,7 +94,6 @@ jobs:
         PKG_CONFIG_PATH=$PWD/deps/lib/pkgconfig:/usr/local/opt/libarchive/lib/pkgconfig:$PKG_CONFIG_PATH \
          make install \
          PREFIX=$PWD/release \
-         WIDE=1 \
          ${{ matrix.config.makeargs }} \
          CFLAGS="-O3 -I$PWD/deps/include -I/usr/local/opt/libarchive/include" \
          LDFLAGS="-L$PWD/deps/lib -L/usr/local/opt/libarchive/lib"
