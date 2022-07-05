@@ -1,3 +1,9 @@
+0.2.33
+
+2022-07-05  Brecht Sanders  https://github.com/brechtsanders/
+
+  * PR from JackBoosY to export CMake targets automaticly (to cmake folder under install path)
+
 0.2.32
 
 2022-04-15  Brecht Sanders  https://github.com/brechtsanders/
