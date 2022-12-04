@@ -1,7 +1,5 @@
 project: xlsxio
 target: xlsxio
 
-# List of commands used to test the target
 cmds:
-  - cmd: /xlsxio/example_xlsxio_read @@
-    env: {}
+  - cmd: /example_xlsxio_read @@
